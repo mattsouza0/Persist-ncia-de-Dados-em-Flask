@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlaskContatos - Visualização</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Lista de Contatos</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group">
+                    {% for contato in contatos %}
+                        <li class="list-group-item">
+                            <strong>Nome:</strong> {{ contato.nome }}<br>
+                            <strong>Sobrenome:</strong> {{ contato.sobrenome }}<br>
+                            <strong>Telefone:</strong> {{ contato.telefone }}<br>
+                            <strong>Email:</strong> {{ contato.email }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn btn-primary mt-3">Novo Contato</a>
+    </div>
+</body>
+</html>
